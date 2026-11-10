@@ -16,7 +16,7 @@ spec:
     spec:
       initContainers:
       - name: wait-for-service
-        image: busybox
+        image: busybox:1.28
         command: ['sh', '-c', "until nslookup nginx-service; do echo 'Waiting for nginx-service...'; sleep 2; done"]
       containers:
       - name: nginx
