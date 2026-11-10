@@ -21,7 +21,10 @@ spec:
         - containerPort: 80
           name: http-nginx
       - name: multitool
-        image: wbitt/network-multitool
+        image: praqma/network-multitool:alpine-extra
         ports:
         - containerPort: 8080
           name: http-multi
+        env:
+        - name: HTTP_PORT
+        value: "8080"
