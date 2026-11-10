@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: multitool-pod
+  labels:
+    app: multitool
+spec:
+  containers:
+  - name: multitool
+    image: praqma/network-multitool:alpine-extra
