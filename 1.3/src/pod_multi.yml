@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
   - name: multitool
-    image: praqma/network-multitool:alpine-extra
+    image: wbitt/network-multitool
