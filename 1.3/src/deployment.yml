@@ -27,4 +27,4 @@ spec:
           name: http-multi
         env:
         - name: HTTP_PORT
-        value: "8080"
+          value: "8080"
