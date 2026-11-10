@@ -19,5 +19,9 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+          name: http-nginx
       - name: multitool
         image: wbitt/network-multitool
+        ports:
+        - containerPort: 8080
+          name: http-multi
