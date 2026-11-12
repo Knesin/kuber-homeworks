@@ -76,15 +76,15 @@
 ---
 ## Решение 1
 
-- Манифест деплоймента для nginx и multitool в файле [src/deployment-multi-container.yaml](src/deployment-multi-container.yaml)
-- Манифест сервиса  ClusterIP в файле [src/service-clusterip.yaml](src/service-clusterip.yaml)
+- Манифест деплоймента для nginx и multitool в файле [src/1/deployment-multi-container.yaml](src/1/deployment-multi-container.yaml)
+- Манифест сервиса  ClusterIP в файле [src/1/service-clusterip.yaml](src/1/service-clusterip.yaml)
 - Запуск и проверка, что запустилось
 
     ![screen1](img/img1.png)
 - Проверка доступности изнутри кластера
   
     ![screen2](img/img2.png)
-- Манифест сервиса NodePort в файле [src/service-nodeport.yaml](src/service-nodeport.yaml)
+- Манифест сервиса NodePort в файле [src/1/service-nodeport.yaml](src/1/service-nodeport.yaml)
 - Запуск, проверка работы и проверка доступности с локального компьютера
   
     ![screen3](img/img3.png)
