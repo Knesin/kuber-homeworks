@@ -82,11 +82,11 @@
 
     ![screen1](img/img1.png)
 - Проверка доступности изнутри кластера
-- 
+  
     ![screen2](img/img2.png)
 - Манифест сервиса NodePort в файле [src/service-nodeport.yaml](src/service-nodeport.yaml)
-- Проверка доступности с локального компьютера
-- 
+- Запуск, проверка работы и проверка доступности с локального компьютера
+  
     ![screen3](img/img3.png)
 
 ---
