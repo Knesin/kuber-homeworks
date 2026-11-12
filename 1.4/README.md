@@ -76,7 +76,9 @@
 ---
 ## Решение 1
 
-
+- Манифест деплоймента для nginx и multitool в файле [src/deployment.yml](src/deployment.yml)
+- Манифест сервиса в файле [src/service.yml](src/service.yml)
+- 
 
 ---
 ## **Задание 2: Настройка Ingress**

@@ -5,10 +5,12 @@ metadata:
 spec:
   ports:
     - name: http-nginx
-      port: 80
+      protocol: TCP
+      port: 9001
       targetPort: 80 
     - name: http-multitool
-      port: 8080
+      protocol: TCP
+      port: 9002
       targetPort: 8080
   selector:
     app: nginx-multitool
