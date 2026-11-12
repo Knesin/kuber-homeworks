@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-multitool-deployment
+  labels:
+    app: nginx-multitool
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-multitool
+  template:
+    metadata:
+      labels:
+        app: nginx-multitool
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+          name: http-nginx
+      - name: multitool
+        image: praqma/network-multitool:alpine-extra
+        ports:
+        - containerPort: 8080
+          name: http-multi
+        env:
+        - name: HTTP_PORT
+          value: "8080"
