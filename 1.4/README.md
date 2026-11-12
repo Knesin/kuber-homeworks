@@ -125,6 +125,31 @@
 ---
 ## Решение 2
 
+- Манифесты:
+  - [deployment-frontend.yaml](src/2/deployment-frontend.yaml)
+  - [deployment-backend.yaml](src/2/deployment-backend.yaml)
+  - [service-frontend.yaml](src/2/service-frontend.yaml)
+  - [service-backend.yaml](src/2/service-backend.yaml)
+  - [ingress.yaml](src/2/ingress.yaml)
+- Запуск м проверка подов
+
+    ![screen4](img/img4.png)
+- Проверка сервисов
+
+    ![screen5](img/img5.png)
+- Проверка доступности изнутри кластера
+
+    ![screen6](img/img6.png)
+- Включение Ingress-контроллера
+
+    ![screen7](img/img7.png)
+- Запуск Ingress
+
+    ![screen8](img/img8.png)
+- Проверка доступности
+
+    ![screen9](img/img9.png)
+
 ---
 ## Шаблоны манифестов с учебными комментариями
 ### **1. Deployment (nginx + multitool)**
