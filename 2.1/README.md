@@ -57,6 +57,17 @@
   - описание пода с контейнерами (`kubectl describe pods data-exchange`)
   - вывод команды чтения файла (`tail -f <имя общего файла>`)
 
+---
+## Решение 1
+
+- Манифест деплоймента для busybox и multitool в файле [src/containers-data-exchange.yaml](src/containers-data-exchange.yaml)
+- Скриншот `kubectl describe pods data-exchange`
+
+    ![screen1](img/img1.png)
+- Скриншот чтения файла
+
+    ![screen2](img/img2.png)
+
 ------
 
 ## Задание 2. PV, PVC
