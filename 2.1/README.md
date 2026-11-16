@@ -133,6 +133,25 @@
   - `sc.yaml`
 - Скриншоты:
   - каждый шаг выполнения задания, начиная с шага 2
+
+---
+## Решение 3
+
+-  Манифест в файле [src/sc.yaml](src/sc.yaml)
+-  Используется SC от microk8s, включается командой `microk8s enable hostpath-storage`
+
+    ![screen9](img/img9.png)
+-  Запуск манифеста 
+
+    ![screen10](img/img10.png)
+-  Демонстрация доступности файла
+
+    ![screen11](img/img11.png)
+-  РАсположение файла
+
+    ![screen12](img/img12.png)
+
+
 ---
 ## Шаблоны манифестов с учебными комментариями
 ### 1. Deployment (containers-data-exchange.yaml)

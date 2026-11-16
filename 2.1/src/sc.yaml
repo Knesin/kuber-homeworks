@@ -1,0 +1,53 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: my-sc
+provisioner: microk8s.io/hostpath
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc2
+spec:
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: my-sc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-exchange-sc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-multitool
+  template:
+    metadata:
+      labels:
+        app: busybox-multitool
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:1.28
+        command: ["/bin/sh", "-c"] 
+        args: ["while true; do echo $(date) >> /date/out/file.txt; sleep 5; done"] # КЛЮЧЕВОЕ: Команда для чтения данных из файла, расположенного в директории, указанной в volumeMounts контейнера
+        volumeMounts:
+        - name: my-pvc-volumes
+          mountPath: /date/out
+      - name: multitool
+        image: wbitt/network-multitool:alpine-extra
+        command: ["/bin/sh", "-c"]
+        args: ["tail -f /date/in/file.txt"] 
+        volumeMounts:
+        - name: my-pvc-volumes
+          mountPath: /date/in/
+      volumes:
+      - name: my-pvc-volumes
+        persistentVolumeClaim:
+          claimName: my-pvc2
