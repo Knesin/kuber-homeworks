@@ -61,12 +61,18 @@
 ## Решение 1
 
 - Манифест деплоймента для busybox и multitool в файле [src/containers-data-exchange.yaml](src/containers-data-exchange.yaml)
+- Запуск пода и проверка
+
+     ![screen1](img/img1.png)
 - Скриншот `kubectl describe pods data-exchange`
 
-    ![screen1](img/img1.png)
-- Скриншот чтения файла
-
     ![screen2](img/img2.png)
+- Скриншот логов multitool
+
+    ![screen3](img/img3.png)
+- Скриншот чтения файла `tail -f` из multitool
+
+    ![screen4](img/img4.png)
 
 ------
 
@@ -89,6 +95,25 @@
   - каждый шаг выполнения задания, начиная с шага 2.
 - Описания:
   - объяснение наблюдаемого поведения ресурсов в двух последних шагах.
+
+---
+## Решение 2
+
+- Манифест с PV, PVC и деплойментом для busybox и multitool в файле [src/pv-pvc.yaml](src/pv-pvc.yaml)
+- Запуск и проверка
+
+    ![screen5](img/img5.png)
+- Скриншот логов multitool, демонстрирующий чтение общего файла
+
+     ![screen6](img/img6.png)
+- Удаление Deployment и PVC и демонстрация PV
+
+    ![screen7](img/img7.png)
+- Демонстрация файла на ноде, удаление PV и повторная демонстрация
+
+    ![screen8](img/img8.png)
+- Пояснение
+
 
 ------
 

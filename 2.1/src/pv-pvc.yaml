@@ -1,0 +1,61 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /mnt/pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  volumeName: my-pv
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-exchange-pvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-multitool
+  template:
+    metadata:
+      labels:
+        app: busybox-multitool
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:1.28
+        command: ["/bin/sh", "-c"] 
+        args: ["while true; do echo $(date) >> /date/out/file.txt; sleep 5; done"]
+        volumeMounts:
+        - name: my-pvc-volumes
+          mountPath: /date/out
+      - name: multitool
+        image: wbitt/network-multitool:alpine-extra
+        command: ["/bin/sh", "-c"]
+        args: ["tail -f /date/in/file.txt"] 
+        volumeMounts:
+        - name: my-pvc-volumes
+          mountPath: /date/in/
+      volumes:
+      - name: my-pvc-volumes
+        persistentVolumeClaim:
+          claimName: my-pvc
