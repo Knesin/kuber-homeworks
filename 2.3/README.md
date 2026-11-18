@@ -144,7 +144,7 @@ openssl x509 -req -in developer.csr -CA {CA серт вашего кластер
 - Манифесты
   - [src/secret-tls.yaml](src/role-pod-reader.yaml)
   - [src/ingress-tls.yaml](src/rolebinding-developer.yaml)
-- Команды генерации сертификатов
+- Команды включения rbac и генерации сертификатов
 
     ![screen6](img/img6.png)
 - Запуск и проверка (с новым пользователем и не существующем)
