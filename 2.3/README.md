@@ -141,6 +141,16 @@ openssl x509 -req -in developer.csr -CA {CA серт вашего кластер
 ---
 ## Решение 3
 
+- Манифесты
+  - [src/secret-tls.yaml](src/role-pod-reader.yaml)
+  - [src/ingress-tls.yaml](src/rolebinding-developer.yaml)
+- Команды генерации сертификатов
+
+    ![screen6](img/img6.png)
+- Запуск и проверка
+
+    ![screen7](img/img7.png)
+
 ---
 ## Шаблоны манифестов с учебными комментариями
 ### **1. Deployment с ConfigMap (nginx + multitool)**
