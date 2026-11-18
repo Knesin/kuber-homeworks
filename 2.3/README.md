@@ -64,7 +64,18 @@
 ---
 ## Решение 1
 
+- Манифесты
+  - [src/configmap-web.yaml](src/configmap-web.yaml)
+  - [src/deployment.yaml](src/deployment.yaml)
+- Запуск и проверка
 
+    ![screen1](img/img1.png)
+- Проверка окружения в multitool
+
+    ![screen2](img/img2.png)
+- Проверка через curl стартовой страницы nginx и доступности multitool
+
+    ![screen3](img/img3.png)
 
 ---
 ## **Задание 2: Настройка HTTPS с Secrets**  
