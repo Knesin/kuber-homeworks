@@ -101,6 +101,16 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 ---
 ## Решение 2
 
+- Манифесты
+  - [src/secret-tls.yaml](src/secret-tls.yaml)
+  - [src/ingress-tls.yaml](src/ingress-tls.yaml)
+- Запуск и проверка
+
+    ![screen4](img/img4.png)
+
+- Проверка доступности по HTTPS ` curl -k -H "Host: nginx-multitool.site" https://localhost`
+
+    ![screen5](img/img5.png)
 
 ---
 ## **Задание 3: Настройка RBAC**  
@@ -130,7 +140,6 @@ openssl x509 -req -in developer.csr -CA {CA серт вашего кластер
 
 ---
 ## Решение 3
-
 
 ---
 ## Шаблоны манифестов с учебными комментариями
