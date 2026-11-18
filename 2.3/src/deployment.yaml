@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-web
+          mountPath: /usr/share/nginx/html
+      - name: multitool
+        image: wbitt/network-multitool:alpine-extra
+        envFrom:
+        - configMapRef:
+            name: env-multitool
+      volumes:
+      - name: nginx-web
+        configMap:
+          name: web-content
