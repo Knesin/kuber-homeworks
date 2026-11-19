@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: strip-api
+  name: {{ .Release.Name }}-strip-api
 spec:
   stripPrefix:
     prefixes:

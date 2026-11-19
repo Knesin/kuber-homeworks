@@ -30,7 +30,26 @@
 ---
 ## Решение 1
 
+- Упаковывать буду приложения из занятия 1.4 Сетевое взаимодействие в Kubernetes
+- Манифесты шаблонов (фронтэнд - nginx, бекэнд - multitool)
+    - [backend-deployment.yaml](src/homework-chart/templates/backend-deployment.yaml)
+    - [backend-service.yaml](src/homework-chart/templates/backend-service.yaml)
+    - [frontend-configmap.yaml](src/homework-chart/templates/frontend-configmap.yaml)
+    - [frontend-deployment.yaml](src/homework-chart/templates/frontend-deployment.yaml)
+    - [frontend-service.yaml](src/homework-chart/templates/frontend-service.yaml)
+    - [ingress.yaml](src/homework-chart/templates/ingress.yaml)
+- Переменные чарта
+    - [values.yaml](src/homework-chart/values.yaml)
+- Изменении версии приложения в переменной tag в values.yaml
 
+```yaml
+frontend:
+  replicas: 1
+  image:
+    repository: nginx
+    tag: "1.14.2"
+```
+- Изменении версии приложения при развертывании флагом `--set frontend.image.tag=1.25`
 
 ------
 ### Задание 2. Запустить две версии в разных неймспейсах
