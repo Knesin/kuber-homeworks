@@ -65,10 +65,14 @@ frontend:
 ```sh
 helm upgrade -i app-v1 ./homework-chart -n app1 --create-namespace --set ingress.host=v1.app1.local
 helm upgrade -i app-v2 ./homework-chart -n app1 --set frontend.image.tag=1.25 --set ingress.host=v2.app1.local
-helm upgrade -i app-v3 ./homework-chart -n app2 --create-namespace --set frontend.image.tag=1.22 --set ingress.host=v3.app1.local
+helm upgrade -i app-v3 ./homework-chart -n app2 --create-namespace --set frontend.image.tag=1.22 --set ingress.host=v3.app2.local
 ```
 - Скриншот успешного запуска
-- 
+
+    ![screen1](img/img1.png)
+- Результат запросов curl `curl -H "Host: v1.app1.local" http://localhost/`
+  
+     ![screen2](img/img2.png)
 
 ---
 
