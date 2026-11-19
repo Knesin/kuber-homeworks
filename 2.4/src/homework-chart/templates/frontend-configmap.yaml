@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-frontend-html
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Страница из {{ .Release.Name }}</title>
+    </head>
+    <body>
+      <h1>Привет от Максима!</h1>
+      <ul>
+        <li><b>Релиз:</b> {{ .Release.Name }}</li>
+        <li><b>Namespace:</b> {{ .Release.Namespace }}</li>
+        <li><b>Версия nginx:</b> {{ .Values.frontend.image.tag }}</li>
+      </ul>
+    </body>
+    </html>
