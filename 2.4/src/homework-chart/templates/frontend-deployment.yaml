@@ -20,3 +20,10 @@ spec:
           ports:
             - containerPort: {{ .Values.frontend.port }}
               name: {{ .Values.frontend.name_port }}
+          volumeMounts:
+            - name: html-content
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: html-content
+          configMap:
+            name: {{ .Release.Name }}-frontend-html
