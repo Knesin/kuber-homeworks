@@ -12,7 +12,7 @@ kind: Ingress
 metadata:
   name:  {{ .Release.Name }}-ingress
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: default-strip-api@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-{{ .Release.Name }}-strip-api@kubernetescrd
 spec:
   rules:
   - host: {{ .Values.ingress.host }}
