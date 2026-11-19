@@ -4,8 +4,8 @@ frontend:
     repository: nginx
     tag: "1.14.2"
   port: 80
-  target-port: 80
-  name-port: http-nginx
+  target_port: 80
+  name_port: http-nginx
 
 backend:
   replicas: 1
@@ -13,9 +13,9 @@ backend:
     repository: wbitt/network-multitool
     tag: "alpine-extra"
   port: 8080
-  target-port: 8080
-  name-port: http-multitool
+  target_port: 8080
+  name_port: http-multitool
 
 ingress:
   host: nginx-multitool.site
-  backend-prefix: /api
+  backend_prefix: /api

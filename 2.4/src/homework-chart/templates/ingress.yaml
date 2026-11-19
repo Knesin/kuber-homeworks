@@ -5,7 +5,7 @@ metadata:
 spec:
   stripPrefix:
     prefixes:
-      - {{ .Values.ingress.backend-prefix }}
+      - {{ .Values.ingress.backend_prefix }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -18,7 +18,7 @@ spec:
   - host: {{ .Values.ingress.host }}
     http:
       paths:
-      - path:  {{ .Values.ingress.backend-prefix }}
+      - path:  {{ .Values.ingress.backend_prefix }}
         pathType: Prefix
         backend:
           service:

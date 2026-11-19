@@ -6,7 +6,7 @@ spec:
   selector:
     app: {{ .Release.Name }}-frontend
   ports:
-    - name: {{ .Values.frontend.name-port }}
+    - name: {{ .Values.frontend.name_port }}
       protocol: TCP
       port: {{ .Values.frontend.port }}
-      targetPort: {{ .Values.frontend.target-port }}
+      targetPort: {{ .Values.frontend.target_port }}
