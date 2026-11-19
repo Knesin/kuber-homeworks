@@ -22,4 +22,4 @@ spec:
               value: "{{ .Values.backend.port }}"
           ports:
             - containerPort: {{ .Values.backend.port }}
-              name: {{ .Values.backend.name-port }}
+              name: {{ .Values.backend.name_port }}
