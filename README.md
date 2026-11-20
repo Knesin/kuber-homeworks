@@ -11,3 +11,5 @@
 2.3 [Настройка приложений и управление доступом в Kubernetes](/2.3/README.md)
 
 2.4 [Helm](/2.4/README.md)
+
+3.1 [Компоненты Kubernetes](/3.1/README.md)
